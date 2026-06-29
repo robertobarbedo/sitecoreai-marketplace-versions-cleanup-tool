@@ -143,7 +143,7 @@ export function SettingsModal({
         <DialogHeader>
           <DialogTitle>Retention Settings</DialogTitle>
           <DialogDescription>
-            Configure version retention rules. Changes apply to the trim preview immediately.
+            Configure version retention policy.
           </DialogDescription>
         </DialogHeader>
 
