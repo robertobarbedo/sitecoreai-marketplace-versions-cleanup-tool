@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
-    <Import Project="$(NuGetPackageRoot)sitecore.xmcloud.assemblies\1.6.1073\build\Sitecore.XMCloud.Assemblies.targets" Condition="Exists('$(NuGetPackageRoot)sitecore.xmcloud.assemblies\1.6.1073\build\Sitecore.XMCloud.Assemblies.targets')" />
-    <Import Project="$(NuGetPackageRoot)sitecore.assemblies.sitecoreheadlessservicesserver\19.0.0\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets" Condition="Exists('$(NuGetPackageRoot)sitecore.assemblies.sitecoreheadlessservicesserver\19.0.0\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets')" />
-  </ImportGroup>
-</Project>
