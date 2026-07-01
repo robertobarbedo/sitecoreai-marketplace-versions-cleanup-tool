@@ -202,15 +202,17 @@ export function VersionsList({ versions, settings, isLoading, showCleanupPreview
                 <span className="text-[10px] text-danger-fg whitespace-nowrap">will be removed</span>
               )}
 
-              {/* Individual delete button */}
-              <button
-                type="button"
-                onClick={(e) => { e.stopPropagation(); handleDeleteClick(ver.version); }}
-                className="opacity-30 hover:opacity-100 transition-opacity p-0.5 rounded hover:bg-danger-bg"
-                title={`Delete version ${ver.version}`}
-              >
-                <Icon path={mdiDeleteOutline} size={0.6} className="text-danger-fg" />
-              </button>
+              {/* Individual delete button — hidden for the live version */}
+              {!ver.isLive && (
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); handleDeleteClick(ver.version); }}
+                  className="opacity-30 hover:opacity-100 transition-opacity p-0.5 rounded hover:bg-danger-bg"
+                  title={`Delete version ${ver.version}`}
+                >
+                  <Icon path={mdiDeleteOutline} size={0.6} className="text-danger-fg" />
+                </button>
+              )}
             </div>
           );
         })}

@@ -143,7 +143,7 @@ export function SettingsModal({
         <DialogHeader>
           <DialogTitle>Retention Settings</DialogTitle>
           <DialogDescription>
-            Configure version retention policy.
+            Configure version retention rules. Changes apply to the trim preview immediately.
           </DialogDescription>
         </DialogHeader>
 
@@ -191,6 +191,12 @@ export function SettingsModal({
               {validationErrors.numberOfDays && (
                 <p className="text-xs text-danger-fg">{validationErrors.numberOfDays}</p>
               )}
+            </div>
+
+            <div className="p-2.5 bg-muted/50 border border-border-color rounded-md">
+              <p className="text-xs text-muted-foreground">
+                The live (published) version and any versions newer than it are always protected and will never be deleted, regardless of these settings.
+              </p>
             </div>
 
             {error && (
