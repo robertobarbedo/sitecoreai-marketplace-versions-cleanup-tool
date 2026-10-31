@@ -107,14 +107,15 @@ npm start
 Deploy to Vercel or any Node.js host that can run Next.js, then point the App
 Studio deployment URL at the public HTTPS address.
 
-There is no `.env.example`. The code reads these variables:
+No environment variables are required. Set these optional ones in your
+host's environment settings (or a local `.env.local`) if you need them:
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | No | Google Analytics 4 measurement ID. When unset, no analytics script is loaded. |
 | `NEXT_PUBLIC_PRIMARY_LANGUAGE` | No | Fallback content language for GraphQL helpers (default `en`). The app normally uses the language of the page open in Pages. |
+| `CSP_FRAME_ANCESTORS` | No | Sites allowed to embed the app, as space-separated CSP sources for the `Content-Security-Policy: frame-ancestors` header (default `'self' https://*.sitecorecloud.io`). |
 
-Both are public build-time values. There are no server-side secrets.
+Both are read at build time. There are no secrets.
 
 The app only runs inside SitecoreAI: the Marketplace SDK needs the host
 iframe, so opening the deployment URL directly in a browser stays on
@@ -155,11 +156,25 @@ including item and template IDs, are in
 - **Data flow:** content data goes only between the browser and your
   SitecoreAI environment through the SDK. The app's server only serves the
   static Next.js app.
-- **Analytics:** if `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set, Google Analytics
-  receives page views and a `marketplace_client_ready` event, tagged with
-  `app_name: versions-cleanup-tool`. No content data is sent.
-- **Deletion is permanent:** deleted versions cannot be restored from the app.
-  Both single delete and bulk cleanup ask for confirmation first.
+- **Analytics and tracking:** none. The app loads no third-party scripts or
+  fonts.
+- **Security headers:** every response sets HSTS, a
+  `Content-Security-Policy: frame-ancestors` header that limits which sites
+  can embed the app (see `CSP_FRAME_ANCESTORS`), `X-Content-Type-Options`,
+  `Referrer-Policy` and `Permissions-Policy`.
+- **Deletion is permanent:** versions are deleted through the Marketplace
+  SDK (`deleteItemVersion`) with the signed-in user's own permissions. They
+  cannot be restored from the app, so treat a deletion as irreversible
+  unless you have your own backups of the environment. Both single delete
+  and bulk cleanup ask for confirmation first.
+- **Stored data:** the only thing the app writes, apart from deleting
+  versions, is the retention settings item under
+  `/sitecore/system/Modules/Marketplace/VersioningCenter` in your own
+  environment. Delete that folder to remove it.
+- **Policies:** [Privacy policy](PRIVACY.md),
+  [Terms of service](TERMS.md),
+  [Data usage disclosure](DATA-USAGE.md) and
+  [Security policy](SECURITY.md).
 
 ## Limitations
 
@@ -185,7 +200,6 @@ including item and template IDs, are in
 ```
 src/
   app/          Panel page, layout and global styles
-  components/   Google Analytics loader
   types/        Version and settings types, defaults
   utils/        GraphQL calls, settings persistence, retention rules,
                 Marketplace client hook
@@ -199,8 +213,11 @@ settings are stored.
 
 ## Support
 
-Report bugs and request features by opening an issue in this repository.
-This is a community app and is not an official Sitecore product.
+Report bugs and request features in
+[GitHub Issues](https://github.com/robertobarbedo/sitecoreai-marketplace-versions-cleanup-tool/issues).
+Report security problems privately as described in the
+[Security policy](SECURITY.md). This is a community app and is not an
+official Sitecore product.
 
 ## License
 
