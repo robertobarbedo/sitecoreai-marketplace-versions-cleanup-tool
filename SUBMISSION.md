@@ -79,7 +79,7 @@ Off. The app does not use AI or machine learning.
 - Deployment URL: `{{APP_URL}}`
 - Client credentials (custom authorization): **No**. The app has no `/api` routes and uses only the Marketplace SDK's built-in authorization.
 - Environment variables on the host: none required. Optional: `NEXT_PUBLIC_PRIMARY_LANGUAGE` (default `en`), `CSP_FRAME_ANCESTORS`.
-- App logo: `versions-cleanup-tool-icon.svg`
+- App logo: `clock-counter-clockwise-duotone.svg`
 
 ## 11. Submission details (visible only to Sitecore)
 

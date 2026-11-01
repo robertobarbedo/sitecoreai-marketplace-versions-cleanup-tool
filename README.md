@@ -91,7 +91,7 @@ against them.
 4. Under API access, enable **SitecoreAI APIs**.
 5. No extra permissions are needed.
 6. Set the deployment URL to `https://<your-deployment>/`.
-7. Upload the app logo: `versions-cleanup-tool-icon.svg` in this repository.
+7. Upload the app logo: `clock-counter-clockwise-duotone.svg` in this repository.
 8. Save, then install the app in your organization and grant it access to the
    environments where it should run.
 9. Open a page in Pages and select the app from the context panel.
