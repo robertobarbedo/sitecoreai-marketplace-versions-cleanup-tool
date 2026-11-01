@@ -1,7 +1,7 @@
 # Marketplace submission: Versions Cleanup Tool
 
 Copy-paste text for Sitecore's public-app submission form, in form order.
-Replace every `{{...}}` placeholder before submitting.
+Replace `{{APP_URL}}` with the production deployment URL before submitting.
 
 ## 1. App name
 
@@ -63,7 +63,7 @@ PNG, shown as 600×900 thumbnails. Capture during live QA, with the panel open n
 
 ## 8. Data usage disclosure
 
-Paste from `DATA-USAGE.md` (replace `rb205@proton.me` in it first).
+Paste from `DATA-USAGE.md`.
 
 Summary: the app is client-side only. Version data is read and versions are deleted through the Marketplace SDK with the user's own permissions, and nothing reaches the app's server, which only serves static files. The only data it writes is the retention settings item in the customer's own environment; the hosting provider keeps standard request logs for 90 days.
 
@@ -104,4 +104,4 @@ Next.js lists sharp (LGPL-3.0 libvips) as an optional dependency for image optim
 - [ ] Live QA: single delete and bulk cleanup on a test page; the editor switches to the latest remaining version if the open one was deleted
 - [ ] Live QA: save retention settings and confirm the suggestions change
 - [ ] Screenshots captured (PNG)
-- [ ] `rb205@proton.me` replaced in DATA-USAGE.md, PRIVACY.md, TERMS.md, SECURITY.md; `Roberto Barbedo`, `rb205@proton.me`, `{{APP_URL}}` replaced in this form
+- [ ] `{{APP_URL}}` replaced with the production deployment URL in this form
