@@ -222,7 +222,7 @@ export function SettingsModal({
           </Button>
         </DialogFooter>
 
-        <p className="text-[10px] text-muted-foreground text-left -mt-2">
+        <p className="-mt-2 text-left text-[10px] text-[#64748B]">
           Developed by Roberto Barbedo
         </p>
       </DialogContent>
