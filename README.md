@@ -13,6 +13,8 @@ versions can be removed safely based on configurable retention rules. Authors
 review the suggestions, confirm, and the app deletes the flagged versions. The
 live version and anything newer than it are never part of a cleanup.
 
+![See every version of the page and which one is live](.screenshot/1%20-%20See%20every%20version%20of%20the%20page%20and%20which%20one%20is%20live.png)
+
 ## Features
 
 - **Version list** — every version of the current page and language, newest
@@ -71,6 +73,20 @@ flagged for removal.
 
 The rules only drive the cleanup suggestions. Single delete is not checked
 against them.
+
+## Screenshots
+
+**1. See every version of the page and which one is live**
+
+![See every version of the page and which one is live](.screenshot/1%20-%20See%20every%20version%20of%20the%20page%20and%20which%20one%20is%20live.png)
+
+**2. Review suggestions and clean up in one click**
+
+![Review suggestions and clean up in one click](.screenshot/2%20-%20Review%20suggestions%20and%20clean%20up%20in%20one%20click.png)
+
+**3. Settings - Set how many versions and days to keep**
+
+![Settings - Set how many versions and days to keep](.screenshot/3%20-%20Settings%20-%20Set%20how%20many%20versions%20and%20days%20to%20keep.png)
 
 ## Requirements
 
